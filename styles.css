@@ -1,0 +1,275 @@
+/* 
+font-family: 'Crimson Pro', serif;
+font-family: 'Lora', serif;
+font-family: 'Montserrat', sans-serif; 
+*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2rem calc(1.2rem + 5vw);
+  background-color: #181719;
+  color: #fff;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.logo:link,
+.logo:visited {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 200;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid currentColor;
+  padding: .8rem;
+}
+
+.header .material-icons {
+  color: #fff;
+  font-size: 5rem;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.material-icons[name="menu-close"] {
+  display: none;
+}
+
+.nav-open .material-icons[name="menu-open"] {
+  display: none;
+}
+
+.nav-open .material-icons[name="menu-close"] {
+  display: block;
+}
+
+/* .menu {
+  display: none;
+} */
+
+.main-menu {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* transform: translateX(100%); */
+  background-color: #181719;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  color: #333;
+  z-index: 998;
+}
+
+.nav-open .main-menu {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9.6rem;
+  list-style: none;
+}
+
+.menu-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding-bottom: .8rem;
+}
+
+.current {
+  border-bottom: 2px solid currentColor;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4.8rem;
+  gap: 2.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  flex-shrink: 1;
+}
+
+.heading-secondary {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 3.6rem;
+
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  max-width: 23ch;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.img {
+  width: 99%;
+}
+
+.img-info {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  transform: translateY(50%);
+  width: 85%;
+  height: 15rem;
+  padding: 1rem 0 2.5rem 2rem;
+  background-color: #181719;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.person header {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.person-desc {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.person-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.person-job {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #828282;
+}
+
+.person-designer {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  width: 18ch;
+}
+
+.person-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.footer {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #a9a9a9;
+  margin-top: 15rem;
+}
+
+@media screen and (min-width: 50em) {
+
+  .header .material-icons.menu {
+    display: none;
+  }
+
+  .main-menu {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    position: relative;
+    z-index: 0;
+    width: auto;
+    height: auto;
+    /* display: block; */
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 8.6rem;
+    list-style: none;
+  }
+
+  .menu-link {
+    font-size: 1.8rem;
+  }
+
+  .main {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: calc(1rem + 5vw);
+  }
+
+  .img-container {
+    width: 100%;
+    flex-basis: 50%;
+  }
+
+  .description {
+    font-size: 2.4rem;
+  }
+}
